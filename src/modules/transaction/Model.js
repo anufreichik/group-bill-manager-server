@@ -8,14 +8,14 @@ const transactionSchema = new Schema({
         require: true,
         select:true,
     },
-    transactionWhoPaid: {
+    memberWhoPaid: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'Transaction',
+        ref: 'Member',
         required: true,
     },
-    paidForTransactions: {
+    paidForTMembers: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'Transaction',
+        ref: 'Member',
         required: true,
     },
     amount: {
