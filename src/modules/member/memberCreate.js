@@ -2,7 +2,7 @@ import Member from './Model';
 export default function memberCreate(req, res){
     const newMember = new Member({
         memberName:req.body.memberName,
-        party:req.body.partyId
+        partyId:req.body.partyId
     })
 
     newMember

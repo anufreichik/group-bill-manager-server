@@ -14,7 +14,7 @@ export default function partyCreate(req, res){
         })
         .catch((err)=>{
             console.log(err);
-            res.status(400).json('party not created: error!')
+            res.status(400).json('party not created: error!' + err)
         })
         .finally(()=>{
             console.log('log party creation call')
