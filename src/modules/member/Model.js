@@ -2,13 +2,12 @@ import mongoose from 'mongoose';
 const Schema = mongoose.Schema;
 
 const memberSchema = new Schema({
-    //_id: mongoose.Schema.Types.ObjectId,
+    _id: mongoose.Schema.Types.ObjectId,
     memberName: {
         type: String,
-        require: true,
-        select:true,
+        required: true,
     },
-    partyId: {
+    party: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Party',
         required: true,

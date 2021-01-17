@@ -1,6 +1,6 @@
 import Base from './Model';
 
-export default function update(req, res) {
+export default function baseUpdateById(req, res) {
   const baseId = req.params.baseId;
 
   // Base.findByIdAndUpdate(baseId, req.body)
@@ -13,7 +13,7 @@ export default function update(req, res) {
   //   })
   //   .catch((err) => {
   //     console.log(err);
-  //     res.status(400).json('Base update error');
+  //     res.status(400).json('Base baseUpdateById error');
   //   });
 
   delete req.body.password; //delete key:value pair from object
@@ -26,6 +26,6 @@ export default function update(req, res) {
     })
     .catch((err) => {
       console.log(err);
-      res.status(400).json('Base update error');
+      res.status(400).json('Base baseUpdateById error');
     });
 }

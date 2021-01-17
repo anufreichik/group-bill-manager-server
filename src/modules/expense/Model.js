@@ -5,8 +5,7 @@ const expenseSchema = new Schema({
     _id: mongoose.Schema.Types.ObjectId,
     expenseName: {
         type: String,
-        require: true,
-        select:true,
+        required: true,
     },
     expenseAmount: {
         type: Number,

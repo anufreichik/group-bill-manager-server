@@ -5,19 +5,20 @@ const transactionSchema = new Schema({
     _id: mongoose.Schema.Types.ObjectId,
     purpose: {
         type: String,
-        require: true,
-        select:true,
+        required: true,
     },
     memberWhoPaid: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Member',
         required: true,
     },
-    paidForTMembers: {
+    paidForTMembers: [
+        {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Member',
         required: true,
-    },
+    }
+    ],
     amount: {
         type: Number,
         required: true,

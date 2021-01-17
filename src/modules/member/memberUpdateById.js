@@ -9,6 +9,6 @@ export default function memberUpdateById(req, res) {
         })
         .catch((err) => {
             console.log(err);
-            res.status(400).json('Member update error');
+            res.status(400).json('Member baseUpdateById error');
         });
 }

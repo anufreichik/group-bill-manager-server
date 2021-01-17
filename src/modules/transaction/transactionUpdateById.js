@@ -9,6 +9,6 @@ export default function transactionUpdateById(req, res) {
         })
         .catch((err) => {
             console.log(err);
-            res.status(400).json('Transaction update error');
+            res.status(400).json('Transaction baseUpdateById error');
         });
 }

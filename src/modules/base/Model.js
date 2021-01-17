@@ -22,6 +22,6 @@ const baseSchema = new Schema(
   },
   { timestamps: {} },
 );
-//create index programmatically
+//baseCreate index programmatically
 //userSchema.index({ email: 1 }, { unique: true });
 export default mongoose.model('Base', baseSchema);

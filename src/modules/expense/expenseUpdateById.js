@@ -9,6 +9,6 @@ export default function expenseUpdateById(req, res) {
         })
         .catch((err) => {
             console.log(err);
-            res.status(400).json('Expense update error');
+            res.status(400).json('Expense baseUpdateById error');
         });
 }
