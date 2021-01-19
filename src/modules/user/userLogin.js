@@ -29,7 +29,7 @@ export default function userLogin(req, res) {
                         process.env.JWT_KEY,
                         {expiresIn: process.env.JWT_EXPIRES_IN}
                     );
-                    return res.status(200).json({message: "Auth successful", token: token});
+                    return res.status(200).json({message: "Auth successful", user: {...user, token:token}} );
                 }
                 res.status(401).json({message: "Auth failed"});
             });
