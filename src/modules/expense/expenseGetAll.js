@@ -1,7 +1,9 @@
 import Expense from './Model';
+import {get} from "lodash";
 
 export default function expenseGetAll(req, res){
-    Expense.find()
+    const partyId = get(req, 'body.partyId','');
+    Expense.find({ party: partyId })
         .exec()
         .then((result)=>{
             res.status(200).json(result);

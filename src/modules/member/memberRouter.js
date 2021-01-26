@@ -5,12 +5,16 @@ import memberDeleteById from "./memberDeleteById";
 import memberUpdateById from "./memberUpdateById";
 import memberGetById from "./memberGetById";
 import memberGetByParty from "./memberGetByParty";
+import memberSearchByPartyId from "./memberSearch";
+import userCheckAuth from "../../middleware/userCheckAuth";
 
 const memberRouter = Router();
-memberRouter.post('/', memberCreate);//POST localhost:5000/member
-memberRouter.get('/', memberGetAll);//GET all by userid
-memberRouter.get('/:memberId', memberGetById);//GET by id
-memberRouter.get('/party/:partyId', memberGetByParty);//GET by party
-memberRouter.delete('/:memberId', memberDeleteById);//delete
-memberRouter.patch('/:memberId', memberUpdateById);//baseUpdateById
+memberRouter.post('/', userCheckAuth, memberCreate);//POST localhost:5000/member
+memberRouter.post('/search',userCheckAuth,memberSearchByPartyId);
+memberRouter.get('/', userCheckAuth,memberGetAll);//GET all by userid
+memberRouter.get('/:memberId', userCheckAuth,memberGetById);//GET by id
+//memberRouter.get('/party/:partyId', userCheckAuth, memberGetByParty);//GET by party
+memberRouter.delete('/:memberId',userCheckAuth, memberDeleteById);//delete
+memberRouter.patch('/:memberId', userCheckAuth,memberUpdateById);
+
 export default memberRouter;

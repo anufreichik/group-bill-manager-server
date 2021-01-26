@@ -1,12 +1,15 @@
 import Member from './Model';
 import mongoose from "mongoose";
+import {get} from "lodash";
 export default function memberCreate(req, res){
     // Создаем id
     const memberId = new mongoose.Types.ObjectId();
+    const userId = get(req, 'userData.userId');
     const newMember = new Member({
         _id:memberId,
         memberName:req.body.memberName,
-        party:req.body.partyId
+        party:req.body.partyId,
+        user:userId
     })
 
     newMember
