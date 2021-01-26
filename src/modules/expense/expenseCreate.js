@@ -1,6 +1,11 @@
 import Expense from './Model';
+import mongoose from "mongoose";
+import {get} from "lodash";
 export default function expenseCreate(req, res){
+    const expenseId = new mongoose.Types.ObjectId();
+    const userId = get(req, 'userData.userId');
     const newExpense = new Expense({
+        _id:expenseId,
         expenseName:req.body.expenseName,
         expenseAmount:req.body.expenseAmount,
         expenseTaxPercent:req.body.expenseTaxPercent,
