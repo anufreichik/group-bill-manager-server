@@ -1,7 +1,8 @@
 import Member from './Model';
+import {get} from "lodash";
 
 export default function memberGetByParty(req,res){
-    const partyId = req.params.partyId;
+    const partyId = get(req, 'body.partyId','');
 
     Member.find({ party: partyId })
         .exec()

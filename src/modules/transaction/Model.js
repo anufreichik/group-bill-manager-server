@@ -12,7 +12,7 @@ const transactionSchema = new Schema({
         ref: 'Member',
         required: true,
     },
-    paidForTMembers: [
+    paidForMembers: [
         {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Member',
