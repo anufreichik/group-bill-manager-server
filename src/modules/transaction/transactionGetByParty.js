@@ -9,11 +9,11 @@ export default function transactionGetByParty(req, res){
             model:'Member',
             select:'memberName -_id'// to select fields and remove _id field
         })
-        .populate([{
-            path: 'paidForTMembers',
+        .populate({
+            path: 'paidForMembers',
             model:'Member',
             select:'memberName -_id'// to select fields and remove _id field
-        }])
+        })
         .exec()
         .then((result)=>{
             res.status(200).json(result);
