@@ -8,7 +8,7 @@ export default function memberCreate(req, res){
     const newMember = new Member({
         _id:memberId,
         memberName:req.body.memberName,
-        party:req.body.partyId,
+        party:req.body.party,
         user:userId
     })
 
