@@ -6,8 +6,6 @@ export default function transactionCreate(req, res){
     const transactionId = new mongoose.Types.ObjectId();
     const members = get(req, 'body.paidForMembers', []);
 
-    console.log('members', members)
-
     const newTransaction = new Transaction({
         _id:transactionId,
         purpose:req.body.purpose,

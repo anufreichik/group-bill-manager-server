@@ -7,12 +7,12 @@ export default function transactionGetByParty(req, res){
         .populate({
             path: 'memberWhoPaid',
             model:'Member',
-            select:'memberName -_id'// to select fields and remove _id field
+            select:'memberName _id'// to select fields and remove _id field
         })
         .populate({
             path: 'paidForMembers',
             model:'Member',
-            select:'memberName -_id'// to select fields and remove _id field
+            select:'memberName _id'// to select fields and remove _id field
         })
         .exec()
         .then((result)=>{
