@@ -5,6 +5,7 @@ import transactionRouter from "../transaction/transactionRouter";
 import memberRouter from "../member/memberRouter";
 import userRouter from "../user/userRouter";
 import debtRouter from "../debt/debtRouter";
+import mailRouter from "../mail/mailRouter";
 
 export default function routes(app) {
   app.use('/base', baseRouter);
@@ -14,4 +15,5 @@ export default function routes(app) {
   app.use('/transaction', transactionRouter);
   app.use('/expense', expenseRouter);
   app.use('/debt', debtRouter);
+  app.use('/mail', mailRouter);
 }

@@ -10,3 +10,5 @@ uploads/images/*
 .idea/workspace.xml
 
 .env
+
+config.js

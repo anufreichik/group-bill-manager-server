@@ -4,7 +4,6 @@ import memberGetAll from "./memberGetAll";
 import memberDeleteById from "./memberDeleteById";
 import memberUpdateById from "./memberUpdateById";
 import memberGetById from "./memberGetById";
-import memberGetByParty from "./memberGetByParty";
 import memberSearchByPartyId from "./memberSearch";
 import userCheckAuth from "../../middleware/userCheckAuth";
 
