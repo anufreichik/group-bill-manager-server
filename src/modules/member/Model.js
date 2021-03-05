@@ -7,6 +7,10 @@ const memberSchema = new Schema({
         type: String,
         required: true,
     },
+    email:{
+        type: String,
+        required: false,
+    },
     party: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Party',
