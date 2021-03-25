@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon --exec babel-node --inspect -r dotenv/config src/index.js",
+    "start": "node build/index.js",
+    "dev": "nodemon --inspect -r dotenv/config -r @babel/register src",
+    "local": "NODE_ENV=local nodemon --inspect -r dotenv/config -r @babel/register src",
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "babel src/index.js -d build",
     "babel-node": "babel-node --presets='@babel/preset-env'"
