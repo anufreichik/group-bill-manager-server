@@ -1,18 +1,18 @@
 import nodemailer from 'nodemailer';
-import creds from '../../../config'
+//import creds from '../../../config'
 
 export default function sendMail(req, res){
     const transporter = nodemailer.createTransport({
         service: 'gmail',
         auth: {
-            user: creds.USER,
-            pass: creds.PASS
+            user: 'test@test.com',//creds.USER,
+            pass: 'pasv', //creds.PASS
         }
     })
 
     const mailOptions = {
         to: `${req.body.email}`,
-        from: creds.USER,
+        from: 'test@test.com',//creds.USER,
         subject: `${req.body.name}`,
         text: `${req.body.message}`,
        // replyTo: `${req.body.email}`
