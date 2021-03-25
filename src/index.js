@@ -17,5 +17,5 @@ errorHandler(app);
 
 
 app.listen(PORT, () => {
-    console.log(`Example app listening at http://localhost:${PORT}`);
+    console.log(`Example app listening at http://localhost:${PORT} - env: ${process.env.NODE_ENV}`);
 });
