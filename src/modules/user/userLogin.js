@@ -8,7 +8,7 @@ export default function userLogin(req, res) {
     const email = get(req, 'body.email', '').trim().toLowerCase();
     const password = get(req, 'body.password', '');
 
-    for(let i=0;i<10;i++){
+    for(let i=0;i<30;i++){
         if(mongoose.connection.readyState!==1){
             setTimeout(()=>{console.log('Waiting to connect...')}, 1000)
         }
