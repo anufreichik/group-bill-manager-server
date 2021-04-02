@@ -2,11 +2,20 @@ import User from './Model';
 import bcrypt from 'bcrypt';
 import {get} from "lodash";
 const jwt = require("jsonwebtoken");
-const dotenv = require('dotenv');
+const mongoose = require('mongoose');
 
 export default function userLogin(req, res) {
     const email = get(req, 'body.email', '').trim().toLowerCase();
     const password = get(req, 'body.password', '');
+
+    for(let i=0;i<10;i++){
+        if(mongoose.connection.readyState!==1){
+            setTimeout(()=>{console.log('Waiting to connect...')}, 1000)
+        }
+        else{
+            break;
+        }
+    }
 
     User.find({ email: email })
         .exec()
