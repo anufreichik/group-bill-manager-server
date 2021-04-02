@@ -2,8 +2,8 @@ import mongoose from 'mongoose';
 
 export const connectionString = process.env.MONGO_CONNECTION_STRING;
 
-function dbConnect() {
-    mongoose.connect(connectionString, {
+async function dbConnect() {
+   await mongoose.connect(connectionString, {
         useNewUrlParser: true,
         useUnifiedTopology: true,
         useFindAndModify: false,
