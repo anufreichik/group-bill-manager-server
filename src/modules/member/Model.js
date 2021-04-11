@@ -7,7 +7,7 @@ const memberSchema = new Schema({
         type: String,
         required: true,
     },
-    email:{
+    email: {
         type: String,
         required: false,
     },
@@ -21,8 +21,7 @@ const memberSchema = new Schema({
         ref: 'User',
         required: true,
     },
-    createdAt:{type:Date, default:Date.now},
-    updatedAt:{type:Date, default:Date.now}
-
+    createdAt: {type: Date, default: Date.now},
+    updatedAt: {type: Date, default: Date.now},
 });
 export default mongoose.model('Member', memberSchema);

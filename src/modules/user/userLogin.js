@@ -1,16 +1,11 @@
 import User from './Model';
 import bcrypt from 'bcrypt';
 import {get} from "lodash";
-import db from "../core/db";
-import dbConnect from "../core/db";
 const jwt = require("jsonwebtoken");
-const mongoose = require('mongoose');
 
 export default async function userLogin(req, res) {
     const email = get(req, 'body.email', '').trim().toLowerCase();
     const password = get(req, 'body.password', '');
-
-    await dbConnect();
 
     User.find({ email: email })
         .exec()

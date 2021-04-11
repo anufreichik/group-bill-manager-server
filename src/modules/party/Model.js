@@ -27,4 +27,15 @@ const partySchema = new Schema({
     },
     {timestamps: {}, versionKey: false},
 );
+
+partySchema.set('toJSON', {virtuals: true});
+partySchema.set('toObject', {virtuals: true});
+
+partySchema.virtual('numMembers', {
+    ref: 'Member', // The model to use
+    localField: '_id', // Find people where `localField`
+    foreignField: 'party', // is equal to `foreignField`
+    count: true // And only get the number of docs
+});
+
 export default mongoose.model('Party', partySchema);

@@ -5,6 +5,7 @@ export default function partyGetAll(req,res){
     const userId = get(req, 'userData.userId');
 
     Party.find({ user: userId })
+        .populate({path: 'numMembers'})
         .sort({ createdAt: -1 })
         .exec()
         .then((result)=>{
