@@ -14,6 +14,7 @@ export default function transactionGetByParty(req, res){
             model:'Member',
             select:'memberName _id'// to select fields and remove _id field
         })
+        .sort({ createdAt: -1 })
         .exec()
         .then((result)=>{
             res.status(200).json(result);
