@@ -7,6 +7,10 @@ const transactionSchema = new Schema({
         type: String,
         required: true,
     },
+    venue:{
+        type: String,
+        required: false,
+    },
     memberWhoPaid: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Member',

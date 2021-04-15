@@ -9,6 +9,7 @@ export default function transactionCreate(req, res){
     const newTransaction = new Transaction({
         _id:transactionId,
         purpose:req.body.purpose,
+        venue:req.body.venue,
         memberWhoPaid:req.body.memberWhoPaid,
         paidForMembers:members,
         amount: req.body.amount,
