@@ -20,6 +20,11 @@ const debtSchema = new Schema({
     paid: {
         type:Boolean,
         required: true,
+        default:false
+    },
+    debtPaymentDate:{
+        type:Date,
+        required:false
     },
     party: {
         type: mongoose.Schema.Types.ObjectId,
